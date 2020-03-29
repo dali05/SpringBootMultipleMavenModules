@@ -10,8 +10,6 @@
     </parent>
     <artifactId>flad-access</artifactId>
 
-    <packaging>jar</packaging>
-
     <dependencies>
         <!-- flad-framework -->
         <dependency>
