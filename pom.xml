@@ -2,20 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>rc</groupId>
-	<artifactId>springboot-multiple-maven-modules</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<modules>
-		<module>domain</module>
-		<module>persistence</module>
-		<module>web</module>
-	</modules>
-	<packaging>pom</packaging>
-
-	<name>springboot-multiple-maven-modules</name>
-	<description>Spring Boot Demo With Multiple Maven Modules</description>
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -23,13 +9,47 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<groupId>com.lma</groupId>
+	<artifactId>flad-manager</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>flad-manager</name>
+	<description>flad-manager</description>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<flad-version>1.2.7-Alpha</flad-version>
 		<java.version>1.8</java.version>
 	</properties>
+<dependencyManagement>
+	<dependencies>
+		<!-- flad-framework -->
+		<dependency>
+			<groupId>com.lma</groupId>
+			<artifactId>flad-framework</artifactId>
+			<version>${flad-version}</version>
+		</dependency>
+
+		<!-- flad-dao -->
+		<dependency>
+			<groupId>com.lma</groupId>
+			<artifactId>flad-dao</artifactId>
+			<version>${flad-version}</version>
+		</dependency>
+
+		<!-- flad-service -->
+		<dependency>
+			<groupId>com.lma</groupId>
+			<artifactId>flad-service</artifactId>
+			<version>${flad-version}</version>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
+
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -46,4 +66,11 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<modules>
+		<module>flad-framework</module>
+		<module>flad-dao</module>
+		<module>flad-service</module>
+		<module>flad-access</module>
+	</modules>
 </project>

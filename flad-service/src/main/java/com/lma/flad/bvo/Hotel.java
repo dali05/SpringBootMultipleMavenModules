@@ -1,4 +1,4 @@
-package rc.domain;
+package com.lma.flad.bvo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
