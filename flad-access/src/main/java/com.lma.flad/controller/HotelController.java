@@ -1,6 +1,8 @@
 package com.lma.flad.controller;
 
-
+import com.lma.flad.entity.Hotel;
+import com.lma.flad.repository.HotelRepository;
+import com.lma.flad.service.IHotelService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +17,7 @@ public class HotelController {
      * inject service
      */
     @Resource
-    private IHotelService	 hotelService;
+    private IHotelService hotelService;
 
     public HotelController(HotelRepository hotelRepository){
         this.hotelRepository = hotelRepository;

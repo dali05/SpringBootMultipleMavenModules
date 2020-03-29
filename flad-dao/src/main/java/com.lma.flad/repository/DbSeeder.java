@@ -1,9 +1,9 @@
-package com.lma.flad.service.persistence;
+package com.lma.flad.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lma.flad.entity.Hotel;
+import com.lma.flad.repository.HotelRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import com.lma.flad.service.domain.Hotel;
 
 import java.util.ArrayList;
 import java.util.List;
