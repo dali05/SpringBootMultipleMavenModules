@@ -5,10 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+
 public class Hotel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     private long id;
     private String name;
     private int classification;
